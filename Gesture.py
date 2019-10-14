@@ -31,7 +31,7 @@ while 1:
                m+=1
           print(m)
 
-          if(len(initial_data1)==100):
+          if(len(initial_data1)==100 and initial_bool2==False):
                initial_data=[str(x) for x in initial_data1 ]
                initial_data=[x.replace("b\'","") for x in initial_data]
                initial_data=[x.replace("\\r\\n\'","") for x in initial_data]
@@ -45,7 +45,7 @@ while 1:
                initial_bool2=True
           # exit()
      
-          if(len(initial_data1)==100):
+          if(len(initial_data1)==100 and initial_bool1==False):
                initial_data=[str(x) for x in initial_data2 ]
                initial_data=[x.replace("b\'","") for x in initial_data]
                initial_data=[x.replace("\\r\\n\'","") for x in initial_data]
@@ -62,15 +62,15 @@ while 1:
      
      if(initial_bool1 and initial_bool2):
           ArduinoSerial.write(str(median1).encode('utf-8'))
-          sleep()
+          # sleep(1)
           ArduinoSerial.write(str(median2).encode('utf-8'))
           ArduinoSerial.flush()
           if(ArduinoSerial.readline()):
                print("m1",(ArduinoSerial.readline()))
           
-          if(ArduinoSerial.readline()):
-               print("m2",(ArduinoSerial.readline()))
-               # exit()
+          # if(ArduinoSerial.readline()):
+          #      print("m2",(ArduinoSerial.readline()))
+          #      # exit()
           
 
      
