@@ -60,7 +60,7 @@ void distancecal(){
   //// Calculating the distance
     distance1= duration1*0.034/2;
     distance2= duration2*0.034/2;
-    median1=median2=40;
+    median1=median2=20;
 }
 
 void initialdata(){
@@ -204,7 +204,7 @@ int kthSmallest(int arr[], int l, int r, int k)
       return kthSmallest(arr, l, pos-1, k);
     return kthSmallest(arr, pos+1, r, k-pos+l-1);
   }
-  return 1000000;
+  return 1000;
 }
 void swap(int *a, int *b)
 {

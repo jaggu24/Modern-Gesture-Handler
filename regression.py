@@ -64,14 +64,14 @@ def prediction(f):
 
 #Finding the function with slope
 
-	if (b[1]<0.3 and b[1]>-0.3) or b[1] == np.nan:
+	if (b[1]<0.1 and b[1]>-0.1) or b[1] == np.nan:
     
-		print("constant")
-	if b[1]>=0.3:
+		return ("c")
+	if b[1]>=0.1:
     	
-		print("Backward")
-	if b[1]<-0.3:
+		return("b")
+	if b[1]<-0.1:
     	
-		print("Forward")
+		return("f")
 
-	time.sleep(2)
+	

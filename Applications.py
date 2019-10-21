@@ -7,3 +7,5 @@ for line in proc.stdout:
         current_apps.append(line.decode().rstrip())
 
 current_apps=current_apps[2:]
+
+print(current_apps)
