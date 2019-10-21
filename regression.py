@@ -1,5 +1,6 @@
 import numpy as np 
 import pandas as pd
+import time
 
 # import matplotlib.pyplot as plt 
 
@@ -45,7 +46,7 @@ def prediction(f):
 
 	q1=w1[0]-1.5*(w[0]-w1[0])
 
-	g=[i for i in f if(i>q1 and i<q)]
+	g=[i for i in f if(i>=q1 and i<=q)]
 
 	y = np.array(g) 
 
@@ -55,7 +56,7 @@ def prediction(f):
 	b = estimate_coef(y1, y)
 
 
-	print("Estimated coefficients: Slope:",b[1]," Intercept:" ,b[0]) 
+	# print("Estimated coefficients: Slope:",b[1]," Intercept:" ,b[0]) 
 
 #Plot the line for estimation
 
@@ -63,9 +64,14 @@ def prediction(f):
 
 #Finding the function with slope
 
-	if b[1]<1 and b[1]>-1:
-    	print("constant")
-	if b[1]>=1:
-    	print("Backward")
-	if b[1]<-1:
-    	print("Forward")
+	if (b[1]<0.3 and b[1]>-0.3) or b[1] == np.nan:
+    
+		print("constant")
+	if b[1]>=0.3:
+    	
+		print("Backward")
+	if b[1]<-0.3:
+    	
+		print("Forward")
+
+	time.sleep(2)
